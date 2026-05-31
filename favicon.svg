@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Archivo:wght@900&amp;display=swap');
+    </style>
+    <clipPath id="r">
+      <rect width="32" height="32" rx="7" ry="7"/>
+    </clipPath>
+  </defs>
+
+  <!-- background -->
+  <rect width="32" height="32" rx="7" ry="7" fill="#16151a"/>
+
+  <!-- lavender glow -->
+  <radialGradient id="g" cx="50%" cy="0%" r="80%">
+    <stop offset="0%" stop-color="#a99bc6" stop-opacity="0.35"/>
+    <stop offset="100%" stop-color="#16151a" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="32" height="32" rx="7" ry="7" fill="url(#g)"/>
+
+  <!-- V — main letter, lavender -->
+  <text
+    x="16" y="23"
+    text-anchor="middle"
+    font-family="Archivo, Arial Black, sans-serif"
+    font-weight="900"
+    font-size="22"
+    fill="#a99bc6"
+    letter-spacing="-1"
+  >VD</text>
+</svg>
