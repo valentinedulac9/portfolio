@@ -18,7 +18,7 @@
 <meta property="og:locale"       content="fr_FR" />
 <meta property="og:url"          content="https://valentinedulac9.github.io/portfolio/" />
 <meta property="og:title"        content="Valentine Dulac — Chef de Projet Communication &amp; Digital" />
-<meta property="og:description"  content="Stratégie digitale, gestion de projet, campagnes qui performent. À la recherche d'une équipe ambitieuse avec laquelle construire la suite." />
+<meta property="og:description"  content="Stratégie digitale, gestion de projet, campagnes qui performent. À la recherche d'une équipe ambitieuse avec qui construire la suite." />
 <meta property="og:image"        content="https://valentinedulac9.github.io/portfolio/project/assets/og.png" />
 <meta property="og:image:width"  content="1200" />
 <meta property="og:image:height" content="630" />
@@ -301,7 +301,11 @@ a { color: inherit; }
   display: flex; align-items: center; justify-content: center; padding: 26px 30px;
 }
 .client-cell:hover { transform: translateY(-5px); border-color: color-mix(in oklch, var(--accent), transparent 30%); box-shadow: 0 14px 30px rgba(0,0,0,.3); }
+a.client-cell { text-decoration: none; }
 .client-cell .client-logo { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block; }
+.client-wall.collapsed .client-cell.extra { display: none; }
+.clients-more-wrap { display: flex; justify-content: center; margin-top: 28px; }
+.clients-more { font-size: 14px; padding: 12px 26px; }
 
 /* ============================================================
    SKILLS & TOOLS
@@ -434,7 +438,7 @@ a { color: inherit; }
   <div class="footline">
     <span>Paris · 75004</span>
     <span>Chef de projet digital &amp; communication</span>
-    <span>À la recherche d'une équipe ambitieuse avec laquelle construire la suite</span>
+    <span>À la recherche d'une équipe ambitieuse avec qui construire la suite</span>
   </div>
   <div class="scrollcue"><div class="dot"></div></div>
 </header>
@@ -618,37 +622,40 @@ a { color: inherit; }
         <h3>Ils m'ont fait confiance</h3>
         <span class="note">Marques accompagnées</span>
       </div>
-      <div class="client-wall">
-        <div class="client-cell reveal" title="Puressentiel">
+      <div class="client-wall collapsed" id="client-wall">
+        <a class="client-cell reveal" href="https://fr.puressentiel.com/" target="_blank" rel="noopener" title="Puressentiel">
           <img class="client-logo" src="project/assets/clients/puressentiel.png" alt="Puressentiel" loading="lazy" />
-        </div>
-        <div class="client-cell reveal d1" title="Sebbin Paris">
+        </a>
+        <a class="client-cell reveal d1" href="https://www.sebbin.com/" target="_blank" rel="noopener" title="Sebbin Paris">
           <img class="client-logo" src="project/assets/clients/sebbin.png" alt="Sebbin Paris" loading="lazy" />
-        </div>
-        <div class="client-cell reveal d2" title="Caparol">
+        </a>
+        <a class="client-cell reveal d2" href="https://www.caparol.fr/" target="_blank" rel="noopener" title="Caparol">
           <img class="client-logo" src="project/assets/clients/caparol.svg" alt="Caparol" loading="lazy" />
-        </div>
-        <div class="client-cell reveal d3" title="Gypass">
+        </a>
+        <a class="client-cell reveal d3" href="https://www.gypass.fr/" target="_blank" rel="noopener" title="Gypass">
           <img class="client-logo" src="project/assets/clients/gypass.webp" alt="Gypass" loading="lazy" />
-        </div>
+        </a>
         <div class="client-cell reveal d4" title="Marguerite">
           <img class="client-logo" src="project/assets/clients/marguerite.jpg" alt="Marguerite" loading="lazy" />
         </div>
-        <div class="client-cell reveal d1" title="Bostik">
+        <a class="client-cell reveal d1" href="https://www.bostik.com/france/fr/" target="_blank" rel="noopener" title="Bostik">
           <img class="client-logo" src="project/assets/clients/bostik.jpg" alt="Bostik" loading="lazy" />
-        </div>
-        <div class="client-cell reveal d2" title="Hynova">
+        </a>
+        <a class="client-cell extra reveal d2" href="https://www.hynova-yachts.fr/" target="_blank" rel="noopener" title="Hynova">
           <img class="client-logo" src="project/assets/clients/hynova.png" alt="Hynova" loading="lazy" />
-        </div>
-        <div class="client-cell reveal d3" title="Maison Craquelin">
+        </a>
+        <a class="client-cell extra reveal d3" href="https://maison-craquelin.com/" target="_blank" rel="noopener" title="Maison Craquelin">
           <img class="client-logo" src="project/assets/clients/craquelin.webp" alt="Maison Craquelin" loading="lazy" />
-        </div>
-        <div class="client-cell reveal d4" title="Pom Bistro">
+        </a>
+        <a class="client-cell extra reveal d4" href="https://www.pombistro.fr/" target="_blank" rel="noopener" title="Pom Bistro">
           <img class="client-logo" src="project/assets/clients/pombistro.png" alt="Pom Bistro" loading="lazy" />
-        </div>
-        <div class="client-cell reveal d1" title="Vivacy Paris">
+        </a>
+        <a class="client-cell extra reveal d1" href="https://vivacy.com/fr" target="_blank" rel="noopener" title="Vivacy Paris">
           <img class="client-logo" src="project/assets/clients/vivacy.png" alt="Vivacy Paris" loading="lazy" />
-        </div>
+        </a>
+      </div>
+      <div class="clients-more-wrap">
+        <button class="btn btn-ghost clients-more" id="clients-more" type="button">Voir plus <span class="arrow">↓</span></button>
       </div>
     </div>
   </div>
@@ -695,7 +702,7 @@ a { color: inherit; }
   <div class="wrap">
     <p class="eyebrow reveal">04 — Contact</p>
     <h2 class="reveal d1">Parlons-en.</h2>
-    <p class="sentence reveal d1">À la recherche d'une équipe ambitieuse avec laquelle construire la suite.</p>
+    <p class="sentence reveal d1">À la recherche d'une équipe ambitieuse avec qui construire la suite.</p>
 
     <div class="channels reveal d2">
       <a class="channel" href="mailto:valentinedulac9@gmail.com">
@@ -779,6 +786,21 @@ a { color: inherit; }
     nav.classList.toggle('menu-open', open);
     document.body.style.overflow = open ? 'hidden' : '';
   });
+
+  /* ── clients "voir plus" ── */
+  const clientsMore = document.getElementById('clients-more');
+  const clientWall = document.getElementById('client-wall');
+  if (clientsMore && clientWall) {
+    clientsMore.addEventListener('click', function () {
+      const collapsed = clientWall.classList.toggle('collapsed');
+      if (!collapsed) {
+        clientWall.querySelectorAll('.client-cell.extra').forEach(function (c) { c.classList.add('in'); });
+      }
+      clientsMore.innerHTML = collapsed
+        ? 'Voir plus <span class="arrow">↓</span>'
+        : 'Voir moins <span class="arrow">↑</span>';
+    });
+  }
 
   /* ── hero parallax ── */
   const glow = document.getElementById('hero-glow');
