@@ -6,6 +6,10 @@
 <title>Valentine Dulac — Chef de Projet Communication &amp; Digital</title>
 <meta name="description" content="Portfolio de Valentine Dulac, Chef de Projet Communication &amp; Digital à Paris. Stratégie digitale, gestion de projet, campagnes qui performent." />
 
+<!-- Indexation -->
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://valentinedulac9.github.io/portfolio/" />
+
 <!-- Favicon -->
 <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
@@ -390,136 +394,9 @@ a { color: inherit; }
   .contact .channel { padding: 16px 18px; }
   .contact .channel .val { font-size: 14.5px; }
 }
-
-/* ── password gate (léger) ── */
-.pw-gate {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  background: var(--bg);
-  background-image: radial-gradient(120% 120% at 50% 0%, var(--bg-grad), var(--bg));
-}
-.pw-gate[hidden] { display: none; }
-.pw-card {
-  width: 100%;
-  max-width: 380px;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: 34px 30px;
-  text-align: center;
-}
-.pw-card h2 {
-  font-family: var(--display);
-  font-weight: 800;
-  font-size: 22px;
-  margin: 0 0 6px;
-  color: var(--fg);
-}
-.pw-card p {
-  font-family: var(--body);
-  font-size: 14px;
-  color: var(--fg-mute);
-  margin: 0 0 22px;
-}
-.pw-input {
-  width: 100%;
-  font-family: var(--body);
-  font-size: 15px;
-  color: var(--fg);
-  background: var(--surface-2);
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 13px 14px;
-  outline: none;
-  transition: border-color .2s var(--ease);
-}
-.pw-input:focus { border-color: var(--accent); }
-.pw-btn {
-  width: 100%;
-  margin-top: 12px;
-  font-family: var(--display);
-  font-weight: 600;
-  font-size: 15px;
-  color: var(--on-accent);
-  background: var(--accent);
-  border: none;
-  border-radius: 10px;
-  padding: 13px 14px;
-  cursor: pointer;
-  transition: background .2s var(--ease);
-}
-.pw-btn:hover { background: var(--accent-deep); color: var(--fg); }
-.pw-error {
-  min-height: 18px;
-  margin-top: 12px;
-  font-family: var(--mono);
-  font-size: 12.5px;
-  color: #e07a7a;
-  opacity: 0;
-  transition: opacity .2s var(--ease);
-}
-.pw-error.show { opacity: 1; }
 </style>
 </head>
 <body>
-
-<!-- ============================================================
-     PASSWORD GATE (léger — masque visuel côté client)
-     ============================================================ -->
-<div class="pw-gate" id="pw-gate">
-  <form class="pw-card" id="pw-form" autocomplete="off">
-    <h2>Accès privé</h2>
-    <p>Ce portfolio est protégé. Entrez le mot de passe pour continuer.</p>
-    <input class="pw-input" id="pw-input" type="password" placeholder="Mot de passe" aria-label="Mot de passe" autofocus />
-    <button class="pw-btn" type="submit">Entrer</button>
-    <div class="pw-error" id="pw-error">Mot de passe incorrect.</div>
-  </form>
-</div>
-<script>
-(function () {
-  'use strict';
-  var KEY = 'vd_pw_ok';
-  var PASS = 'Paloma2019!';
-  var gate = document.getElementById('pw-gate');
-
-  function unlock() {
-    gate.setAttribute('hidden', '');
-    document.documentElement.style.overflow = '';
-  }
-
-  try {
-    if (sessionStorage.getItem(KEY) === '1') { unlock(); return; }
-  } catch (e) {}
-
-  // bloque le scroll tant que le gate est affiché
-  document.documentElement.style.overflow = 'hidden';
-
-  var form = document.getElementById('pw-form');
-  var input = document.getElementById('pw-input');
-  var error = document.getElementById('pw-error');
-
-  form.addEventListener('submit', function (ev) {
-    ev.preventDefault();
-    if (input.value === PASS) {
-      try { sessionStorage.setItem(KEY, '1'); } catch (e) {}
-      unlock();
-    } else {
-      error.classList.add('show');
-      input.value = '';
-      input.focus();
-    }
-  });
-
-  input.addEventListener('input', function () {
-    error.classList.remove('show');
-  });
-})();
-</script>
 
 <!-- ============================================================
      NAV
@@ -830,7 +707,7 @@ a { color: inherit; }
     </div>
 
     <div class="actions reveal d3">
-      <a class="btn btn-solid" href="https://www.linkedin.com/" target="_blank" rel="noopener">
+      <a class="btn btn-solid" href="https://fr.linkedin.com/in/valentine-dulac" target="_blank" rel="noopener">
         Voir mon LinkedIn <span class="arrow">→</span>
       </a>
       <a class="btn btn-ghost" href="mailto:valentinedulac9@gmail.com">M'écrire</a>
